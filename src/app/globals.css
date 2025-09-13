@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Dosis';
+  src: url('/fonts/dosis-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+body {
+  font-family: 'Dosis', sans-serif;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="%23000000" d="M18 22H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4Z"></path></svg>')
+}
+
+
+::selection {
+  background-color: #ff6b35;
+  color: white;
+}
+
+.background-layer-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color:#FFE39F;
+  background-image: url('/images/pattern-1.png'),
+                    url('/images/pattern-1.png');
+                    
+  background-position: center center, bottom right;
+  background-repeat: repeat, no-repeat;
+  background-size: 70rem, contain; /* Small repeat for first, big for second */
+  background-blend-mode: normal;
+}
+
+
+.background-layer-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: 3;
+  background: url('/images/hero-bottom-shape-01.png') no-repeat bottom center;
+  background-size: cover;
+}
+
+.background-layer-3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120%;
+  z-index: 10;
+  background: url("/images/hero-bottom-shape-02.png") no-repeat bottom center;
+  background-size: contain;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff6b35;
+  border-radius: 10px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .background-layer-3 {
+    bottom: 36%;
+    height: 100%;
+  }
+  
+}
+.custom-div {
+  height: 54vh;
+}
+
+@media (max-width: 375px) {
+  .custom-div {
+    height: 60vh;
+  }
+
+  .custom-margin {
+    margin-bottom: 15vh;
+  }
+
+  .custom-height-xs {
+    height: 50vh;
+  }
+
+  .custom-padding {
+    padding-bottom: 20vh;
+  }
+
+  .custom-margin-xs {
+    margin-bottom: 7rem;
+  }
+
+  .custom-height-programs {
+    height: 75vh;
+    margin-bottom: 10vh;
+  }
+
+  .custom-height-testimonial-card {
+    height: 75vh;
+  }
+}
+
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: upDown 2s ease-in-out infinite;
+}
+
+/* @keyframes sway {
+  0% , 100% { transform: translateX(0) }
+  25% { transform: translateX(-5px) }
+  50% { transform: translateX(5px) }
+  75% { transform: translateX(-5px) }
+}
+
+.animate-sway {
+  animation: sway 1s ease-in-out alternate
+} */
